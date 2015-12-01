@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="290px" height="290px" viewBox="0 0 290 290" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 1 + ftgp-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="105.447503%" x2="0%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#6DB7E1" offset="0%"></stop>
+            <stop stop-color="#9592E8" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Rectangle-1-+-ftgp-icon" sketch:type="MSLayerGroup">
+            <rect id="Rectangle-1" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup" x="0" y="0" width="290" height="290"></rect>
+            <g id="ftgp-icon" transform="translate(28.730650, 28.730650)" sketch:type="MSShapeGroup">
+                <path d="M116.26935,232.5387 C180.483139,232.5387 232.5387,180.483139 232.5387,116.26935 C232.5387,52.0555611 180.483139,0 116.26935,0 C52.0555611,0 0,52.0555611 0,116.26935 C0,180.483139 52.0555611,232.5387 116.26935,232.5387 Z" id="Oval-1" fill="#0872C4"></path>
+                <path d="M119.383707,114.7262 C119.383707,114.7262 119.383707,113.88275 195.98007,31.4785314 C195.980069,31.4785314 232.5387,63.1403261 232.5387,114.7262 C232.5387,171.492274 195.98007,201.027261 195.98007,201.027267 L119.383707,114.7262 Z" id="Path" fill="#FDA823"></path>
+            </g>
+        </g>
+    </g>
+</svg>
