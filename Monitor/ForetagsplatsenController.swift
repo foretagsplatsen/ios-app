@@ -117,6 +117,26 @@ class ForetagsplatsenController: UIViewController, UIWebViewDelegate {
                             MenuController.setData(JSON(data: dataFromString!))
                     }
                     
+                    
+                } else {
+                    // Should never happend
+                    print("false")
+                }
+            }
+        }
+        
+        class MenuUpdatedScriptMessageHandler: NSObject, WKScriptMessageHandler {
+            @objc func userContentController(userContentController: WKUserContentController, didReceiveScriptMessage message: WKScriptMessage) {
+                if(message.body["menuUpdated"] as! Bool) {
+                    
+                    let view = ForetagsplatsenController.webView!
+                    view.evaluateJavaScript("JSON.stringify(window.ftgp.getNavigation());"){
+                        (ret:AnyObject?, _:NSError?) in
+                        let jsonString = ret as! String
+                        let dataFromString = jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+                        MenuController.setData(JSON(data: dataFromString!))
+                    }
+                    
                 } else {
                     // Should never happend
                     print("false")
@@ -126,6 +146,9 @@ class ForetagsplatsenController: UIViewController, UIWebViewDelegate {
         
         let handler = LoadedScriptMessageHandler()
         userContentController.addScriptMessageHandler(handler, name: "loaded")
+        
+        let menuHandler = MenuUpdatedScriptMessageHandler()
+        userContentController.addScriptMessageHandler(menuHandler, name: "menuUpdated")
     }
 }
 

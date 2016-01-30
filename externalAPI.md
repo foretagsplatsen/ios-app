@@ -25,7 +25,7 @@ window.ftgp.toggleActions();
 
 Redirect the page to `route`.
 
-When `query` is provided, all the pairs of the object are 
+When `query` is provided, all the pairs of the object are
 serialized and appended to the URL as query parameters.
 
 If the route begins with "http", the page is redirected
@@ -61,14 +61,19 @@ The returned array items match the following pattern:
 ```javascript
 {
     name: "overview",
-    route: ""
+    route: "",
+    visible: function(){...}
 }
 ```
+
+`visible` is a predicate exposing if an entry is visible. Despite `roles`,
+`visible` is only based on the current state of the company, not the user
+access right.
 
 #####Signature:
 
 	@return {[{}]}
-	
+
 #####Example:
 
 ```javascript
@@ -135,8 +140,32 @@ class LoadedScriptMessageHandler: NSObject, WKScriptMessageHandler {
         if(message.body["loaded"] as! Bool) {
             print("Everything is ready, willing, and able")
         } else {
-            // Should never happend
-            print("Emergy exit")
+            // Should never happened
+            print("Emergency exit")
+        }
+    }
+}
+```
+
+### menuUpdated
+
+The message `menuUpdated` is sent when the navigation menu is updated.
+The body of the postMessage is following:
+
+    {
+        menuUpdated: true // false in case of problem loading
+    }
+
+Example (swift):
+
+```swift
+class MenuUpdatedScriptMessageHandler: NSObject, WKScriptMessageHandler {
+    @objc func userContentController(userContentController: WKUserContentController, didReceiveScriptMessage message: WKScriptMessage) {
+        if(message.body["menuUpdated"] as! Bool) {
+            print("Menu updated")
+        } else {
+            // Should never happened
+            print("Emergency exit")
         }
     }
 }
