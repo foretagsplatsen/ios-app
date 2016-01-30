@@ -61,14 +61,9 @@ The returned array items match the following pattern:
 ```javascript
 {
     name: "overview",
-    route: "",
-    visible: function(){...}
+    route: ""
 }
 ```
-
-`visible` is a predicate exposing if an entry is visible. Despite `roles`,
-`visible` is only based on the current state of the company, not the user
-access right.
 
 #####Signature:
 
@@ -92,7 +87,8 @@ The returned array items match the following pattern:
     name: "Översikt",
     route: ""
     icon: "menu-overview-lg"
-    children: [] // composite pattern here
+    children: [], // composite pattern here
+    visible: true
 }
 ```
 
