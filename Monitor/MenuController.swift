@@ -32,11 +32,13 @@ class MenuController: UITableViewController {
         var result = Array<(JSON, Int)>()
         
         for item in data {
-            let tuple = (item.1, 0)
-            result.append(tuple)
-            for child in item.1["children"] {
-                let tuple = (child.1, 1)
+            if (item.1["visible"]) {
+                let tuple = (item.1, 0)
                 result.append(tuple)
+                for child in item.1["children"] {
+                    let tuple = (child.1, 1)
+                    result.append(tuple)
+                }
             }
         }
         
