@@ -11,11 +11,18 @@ class MenuController: UITableViewController {
     static let backToPortalURL = "http://www.google.fr"
     
     static var view: UITableView?
-    
+
     static private func backToPortalData() -> (JSON, Int) {
-        let dataFromString = ("{\"name\":\"Back To Portal\",\"route\":\"" + backToPortalURL + "\",\"icon\":\"back-to-portal\", \"children\":[]}").dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+        let dataFromString = ("{" +
+                "\"name\": \"Back To Portal\"," +
+                "\"visible\": true," +
+                "\"route\": \"" + backToPortalURL + "\"," +
+                "\"icon\": \"back-to-portal\"," +
+                "\"children\": {[]}")
+        .dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
         return (JSON(data: dataFromString!), 0)
     }
+
     static var data: Array<(JSON, Int)> = [MenuController.backToPortalData()]
     
     static func setData(json: JSON) {
@@ -41,7 +48,7 @@ class MenuController: UITableViewController {
                 }
             }
         }
-        
+
         return result
     }
     
