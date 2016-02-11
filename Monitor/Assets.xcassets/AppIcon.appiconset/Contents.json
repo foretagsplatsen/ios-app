@@ -49,6 +49,18 @@
       "scale" : "2x"
     },
     {
+      "size" : "40x40",
+      "idiom" : "ipad",
+      "filename" : "ios-logo-5.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "40x40",
+      "idiom" : "ipad",
+      "filename" : "ios-logo@2x-5.png",
+      "scale" : "2x"
+    },
+    {
       "size" : "50x50",
       "idiom" : "ipad",
       "filename" : "ios-logo-1.png",
@@ -73,9 +85,28 @@
       "scale" : "2x"
     },
     {
+      "size" : "76x76",
+      "idiom" : "ipad",
+      "filename" : "ios-logo-4.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "76x76",
+      "idiom" : "ipad",
+      "filename" : "ios-logo@2x-3.png",
+      "scale" : "2x"
+    },
+    {
       "size" : "83.5x83.5",
       "idiom" : "ipad",
       "filename" : "ios-logo-3.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "29x29",
+      "idiom" : "watch",
+      "filename" : "ios-logo@2x-4.png",
+      "role" : "companionSettings",
       "scale" : "2x"
     }
   ],
