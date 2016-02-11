@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		432CF2721C06151F0056111F /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432CF2711C06151F0056111F /* LoginController.swift */; };
+		4330815C1C6CBF0700066179 /* HockeySDK.embeddedframework in Resources */ = {isa = PBXBuildFile; fileRef = 4330815B1C6CBF0700066179 /* HockeySDK.embeddedframework */; };
+		4330815E1C6CBF4600066179 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4330815D1C6CBF4600066179 /* HockeySDK.framework */; };
 		433FAF9C1C0CB52F00D93097 /* NavigationMenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433FAF9B1C0CB52F00D93097 /* NavigationMenuViewCell.swift */; };
 		43C44B961C04D5A900EE7178 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C44B951C04D5A900EE7178 /* MenuController.swift */; };
 		43C8F6E71C05D2470051579F /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C8F6E61C05D2470051579F /* SwiftyJSON.swift */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		432CF2711C06151F0056111F /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginController.swift; path = ../Monitor/LoginController.swift; sourceTree = "<group>"; };
+		4330815B1C6CBF0700066179 /* HockeySDK.embeddedframework */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HockeySDK.embeddedframework; path = "HockeySDK-iOS/HockeySDK.embeddedframework"; sourceTree = "<group>"; };
+		4330815D1C6CBF4600066179 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HockeySDK.framework; path = "HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework"; sourceTree = "<group>"; };
 		433FAF9B1C0CB52F00D93097 /* NavigationMenuViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationMenuViewCell.swift; sourceTree = "<group>"; };
 		43C44B951C04D5A900EE7178 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuController.swift; path = ../Monitor/MenuController.swift; sourceTree = "<group>"; };
 		43C8F6E61C05D2470051579F /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = SwiftyJSON/SwiftyJSON.swift; sourceTree = "<group>"; };
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4330815E1C6CBF4600066179 /* HockeySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +60,15 @@
 				43C8F6E61C05D2470051579F /* SwiftyJSON.swift */,
 			);
 			name = SwiftyJSON;
+			sourceTree = "<group>";
+		};
+		4330815A1C6CBEF700066179 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4330815D1C6CBF4600066179 /* HockeySDK.framework */,
+				4330815B1C6CBF0700066179 /* HockeySDK.embeddedframework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		43F534951C089A5F0057C32C /* SWRevealViewController */ = {
@@ -70,6 +84,7 @@
 		E4F4E5691BAF122E002A2581 = {
 			isa = PBXGroup;
 			children = (
+				4330815A1C6CBEF700066179 /* Frameworks */,
 				43F534951C089A5F0057C32C /* SWRevealViewController */,
 				432CF2701C05FDF70056111F /* SwiftyJSON */,
 				E4F4E5741BAF122E002A2581 /* Monitor */,
@@ -112,6 +127,7 @@
 				E4F4E56E1BAF122E002A2581 /* Sources */,
 				E4F4E56F1BAF122E002A2581 /* Frameworks */,
 				E4F4E5701BAF122E002A2581 /* Resources */,
+				433081591C6CBED900066179 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -168,11 +184,28 @@
 			files = (
 				E4F4E5801BAF122E002A2581 /* LaunchScreen.storyboard in Resources */,
 				E4F4E57D1BAF122E002A2581 /* Assets.xcassets in Resources */,
+				4330815C1C6CBF0700066179 /* HockeySDK.embeddedframework in Resources */,
 				E4F4E57B1BAF122E002A2581 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		433081591C6CBED900066179 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FILE=\"${SRCROOT}/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E4F4E56E1BAF122E002A2581 /* Sources */ = {
@@ -300,6 +333,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDK.embeddedframework",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Monitor/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -319,6 +356,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDK.embeddedframework",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Monitor/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
